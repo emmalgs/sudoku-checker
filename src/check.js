@@ -18,10 +18,15 @@ Sudoku.prototype.makeColumns = function() {
 
 Sudoku.prototype.checkRows = function() {
   let checkArray = [1,2,3,4,5,6,7,8,9];
-  let sortedRow = this.rows[0].sort();
-  if (checkArray.toString() === sortedRow.toString()) {
-    return true;
-  } else {
-    return false;
-  }
+    let sortedRow = this.rows[0].sort();
+    if (checkArray.toString() === sortedRow.toString()) {
+      return true;
+    } else {
+      return false;
+    }
 };
+
+function Row(row) {
+  this.row = row;
+  this.correct = null;
+}

@@ -62,6 +62,6 @@ describe('Sudoku', () => {
   test('should return false if a row has a repeat number', () => {
     sudoku.rows[0] = [1,1,2,3,4,5,6,7,9];
     expect(sudoku.checkRows()).toEqual(false);
-  })
+  });
 
 });
