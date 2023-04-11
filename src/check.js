@@ -17,5 +17,11 @@ Sudoku.prototype.makeColumns = function() {
 };
 
 Sudoku.prototype.checkRows = function() {
-  return true;
+  let checkArray = [1,2,3,4,5,6,7,8,9];
+  let sortedRow = this.rows[0].sort();
+  if (checkArray.toString() === sortedRow.toString()) {
+    return true;
+  } else {
+    return false;
+  }
 };
