@@ -1,4 +1,4 @@
-export default function Sudoku(rows) {
+export function Sudoku(rows) {
   this.rows = rows
   this.columns = [];
 }
@@ -15,3 +15,4 @@ Sudoku.prototype.makeColumns = function() {
   const column9 = this.rows.map((row) => row[8]);
   this.columns.push(column1, column2, column3, column4, column5, column6, column7, column8, column9);
 }
+
