@@ -26,7 +26,6 @@ Sudoku.prototype.checkRows = function() {
     }
 };
 
-function Row(row) {
+export function Row(row) {
   this.row = row;
-  this.correct = null;
 }

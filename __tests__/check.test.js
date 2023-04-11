@@ -1,4 +1,13 @@
 import Sudoku from './../src/check.js';
+import { Row } from './../src/check.js';
+
+
+describe('Row', () => {
+  test('should create an instance of row object with an array of length 9 as the value for row', () => {
+    let row = new Row([1,2,3,4,5,6,7,8,9])
+    expect(row).toEqual({ row: [1,2,3,4,5,6,7,8,9] })
+  })
+})
 
 describe('Sudoku', () => {
   let row1;
@@ -63,5 +72,4 @@ describe('Sudoku', () => {
     sudoku.rows[0] = [1,1,2,3,4,5,6,7,9];
     expect(sudoku.checkRows()).toEqual(false);
   });
-
 });
