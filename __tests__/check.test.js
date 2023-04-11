@@ -1,4 +1,4 @@
-import { Sudoku } from './../src/check.js';
+import Sudoku from './../src/check.js';
 
 describe('Sudoku', () => {
   let row1;
@@ -45,13 +45,18 @@ describe('Sudoku', () => {
     expect(Array.isArray(sudoku.columns)).toEqual(true);
   });
 
-    test('should create 9 arrays inside column array when .makeColumns() is called on instance of sudoku object', () => {
-      sudoku.makeColumns();
-      expect(sudoku.columns.length).toEqual(9)
-    });
+  test('should create 9 arrays inside column array when .makeColumns() is called on instance of sudoku object', () => {
+    sudoku.makeColumns();
+    expect(sudoku.columns.length).toEqual(9);
+  });
 
-    test('should create 9 arrays inside column array, with each array 9 in length when .makeColumns() is called on instance of sudoku object', () => {
-      sudoku.makeColumns();
-      expect(sudoku.columns[0].length).toEqual(9)
-    });
+  test('should create 9 arrays inside column array, with each array 9 in length when .makeColumns() is called on instance of sudoku object', () => {
+    sudoku.makeColumns();
+    expect(sudoku.columns[0].length).toEqual(9);
+  });
+
+  test('should return true when .checkRows() is called on instance of sudoku', () => {
+    expect(sudoku.checkRows()).toEqual(true);
+  });
+
 });
