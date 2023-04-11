@@ -16,16 +16,18 @@ Sudoku.prototype.makeColumns = function() {
   this.columns.push(column1, column2, column3, column4, column5, column6, column7, column8, column9);
 };
 
-Sudoku.prototype.checkRows = function() {
-  let checkArray = [1,2,3,4,5,6,7,8,9];
-    let sortedRow = this.rows[0].sort();
-    if (checkArray.toString() === sortedRow.toString()) {
-      return true;
-    } else {
-      return false;
-    }
-};
+
 
 export function Row(row) {
   this.row = row;
 }
+
+Row.prototype.checkRows = function() {
+  let checkArray = [1,2,3,4,5,6,7,8,9];
+  let sortedRow = this.row.sort();
+  if (checkArray.toString() === sortedRow.toString()) {
+    this.correct = true;
+  } else {
+    this.correct = false;
+  }
+};
