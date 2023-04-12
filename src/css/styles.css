@@ -1,3 +1,45 @@
 body {
   background-color: blanchedalmond;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  width: 456px;
+  margin: auto;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+}
+
+.row:first-child {
+  border-top: 3px solid black;
+}
+
+#row9 {
+  border-bottom: 3px solid black;
+}
+
+.row:nth-child(3),
+.row:nth-child(6) {
+  border-bottom: 3px solid black;
+}
+
+
+input {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  border: 1px solid black;
+  font-size: 35px;
+  text-align: center;
+  padding: 0;
+  cursor:pointer;
+}
+
+input:nth-child(3),
+input:nth-child(6) {
+  border-right: 3px solid black;
+}

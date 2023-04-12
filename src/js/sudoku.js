@@ -20,9 +20,9 @@ export default class Sudoku {
     let ids = Object.keys(this.rows);
     for (let i = 0; i < 9; i++) {
       let column = new Column(ids.map((id) =>
-      this.rows[id].row[i]));
+        this.rows[id].row[i]));
       column.checkColumns();
-      this.columns[i + 1] = column
+      this.columns[i + 1] = column;
     }
   }
 }
