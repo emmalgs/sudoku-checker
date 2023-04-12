@@ -33,19 +33,14 @@ describe('Sudoku', () => {
       sudoku.addRow(newRow);
     }
     sudoku.makeColumns();
+    console.log(sudoku.columns)
     expect(Object.keys(sudoku.columns)).toEqual(["1","2","3","4","5","6","7","8","9"]);
   });
 
-  test('should run a check columsn method on columns', () => {
-    for (let i = 0; i < 8; i++) {
-      sudoku.addRow(newRow);
-    }
-    
-    expect(sudoku.columns).toEqual();
-  });
 
-  // test('should create 9 arrays inside column array, with each array 9 in length when .makeColumns() is called on instance of sudoku object', () => {
+  // test('should check if columns are correct and assign property of correct to false', () => {
   //   sudoku.makeColumns();
-  //   expect(sudoku.columns[0].length).toEqual(9);
+  //   sudoku.checkColumns()
+  //   expect(sudoku.columns[1].correct).toEqual(false);
   // });
 });

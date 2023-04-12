@@ -1,8 +1,10 @@
+import Column from "./columns.js";
+
 export default class Sudoku {
   constructor() {
     this.rows = {};
     this.columns = {};
-    this.id = 0
+    this.id = 0;
   }
 
   addRow(row) {
@@ -10,17 +12,15 @@ export default class Sudoku {
   }
 
   assignId() {
-    if (this.id <= 9) {
-      this.id++;
-    } else { this.id = 0 }
-    return this.id
+    this.id++;
+    return this.id;
   }
   
   makeColumns() {
-    let ids = Object.keys(this.rows)
+    let ids = Object.keys(this.rows);
     for (let i = 0; i < 9; i++) {
-      this.columns[i + 1] = ids.map((id) =>
-        this.rows[id].row[i]);
+      this.columns[i + 1] = new Column(ids.map((id) =>
+        this.rows[id].row[i]));
     }
   }
 }
