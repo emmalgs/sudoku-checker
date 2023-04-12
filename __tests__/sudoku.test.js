@@ -28,15 +28,21 @@ describe('Sudoku', () => {
     expect(Object.keys(sudoku.rows)).toEqual(["1","2","3","4","5","6","7","8","9"]);
   });
 
-  // test('should create columns array when method .makeColumns() is called on instance of sudoku object', () => {
-  //   sudoku.makeColumns();
-  //   expect(Array.isArray(sudoku.columns)).toEqual(true);
-  // });
+  test('should make 9 columns with ids of 1-9 based on rows', () => {
+    for (let i = 0; i < 8; i++) {
+      sudoku.addRow(newRow);
+    }
+    sudoku.makeColumns();
+    expect(Object.keys(sudoku.columns)).toEqual(["1","2","3","4","5","6","7","8","9"]);
+  });
 
-  // test('should create 9 arrays inside column array when .makeColumns() is called on instance of sudoku object', () => {
-  //   sudoku.makeColumns();
-  //   expect(sudoku.columns.length).toEqual(9);
-  // });
+  test('should run a check columsn method on columns', () => {
+    for (let i = 0; i < 8; i++) {
+      sudoku.addRow(newRow);
+    }
+    
+    expect(sudoku.columns).toEqual();
+  });
 
   // test('should create 9 arrays inside column array, with each array 9 in length when .makeColumns() is called on instance of sudoku object', () => {
   //   sudoku.makeColumns();
