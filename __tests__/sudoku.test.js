@@ -1,5 +1,6 @@
 import Sudoku from './../src/js/sudoku.js';
 import Row from '../src/js/row.js';
+import Column from '../src/js/columns.js';
 
 describe('Sudoku', () => {
   let row;
@@ -38,9 +39,8 @@ describe('Sudoku', () => {
   });
 
 
-  // test('should check if columns are correct and assign property of correct to false', () => {
-  //   sudoku.makeColumns();
-  //   sudoku.checkColumns()
-  //   expect(sudoku.columns[1].correct).toEqual(false);
-  // });
+  test('should check if columns are correct and assign property of correct to false', () => {
+    sudoku.makeColumns();
+    expect(sudoku.columns[1].correct).toEqual(false);
+  });
 });
