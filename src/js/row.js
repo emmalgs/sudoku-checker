@@ -1,0 +1,15 @@
+export default class Row {
+  constructor(row) {
+    this.row = row;
+  }
+
+  checkRows() {
+    let checkArray = [1,2,3,4,5,6,7,8,9];
+    let sortedRow = this.row.sort();
+    if (checkArray.toString() === sortedRow.toString()) {
+      this.correct = true;
+    } else {
+      this.correct = false;
+    }
+  }
+}
