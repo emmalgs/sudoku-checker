@@ -3,6 +3,60 @@ import Sudoku from './js/sudoku';
 import Row from './js/row';
 
 
+function displaySudokuCheck(sudoku) {
+  const output = document.getElementById("output");
+  output.innerText = "Looks good to me.";
+  
+  const rowChecks = document.getElementById("row-checks");
+  Object.keys(sudoku.rows).forEach((key) => {
+    let p = document.createElement("p");
+    p.dataset['id'] = key;
+    p.innerText = `Row ${key}: ${sudoku.rows[key].correct}`;
+    rowChecks.append(p);
+  });
+
+  const columnChecks = document.getElementById("column-checks");
+  Object.keys(sudoku.columns).forEach((key) => {
+    let p = document.createElement("p");
+    p.dataset['id'] = key;
+    p.innerText = `Column ${key}: ${sudoku.columns[key].correct}`;
+    columnChecks.append(p);
+  });  
+}
+
+function highlightRows(sudoku) {
+  Object.keys(sudoku.rows).forEach((key) => {
+    if (sudoku.rows[key].correct === 'Correct') {
+      let correctRow = document.getElementById(`row${key}`).children;
+      Array.from(correctRow).forEach(function(element) {
+        element.style.backgroundColor = "lightgreen";
+      });
+    } else if (sudoku.rows[key].correct === 'Wrong!') {
+      let wrongRow = document.querySelector(`#row${key}`).children;
+      Array.from(wrongRow).forEach(function(element) {
+        element.style.backgroundColor = "red";
+      });
+    }
+  });
+}
+
+function highlightColumns(sudoku) {
+  Object.keys(sudoku.columns).forEach((key) => {
+    if (sudoku.columns[key].correct === 'Correct') {
+      let correctColumn = document.querySelectorAll(`[data-id="b${key}"]`);
+      Array.from(correctColumn).forEach(function(element) {
+        element.style.backgroundColor = "lightgreen";
+      });
+    } else if (sudoku.columns[key].correct === 'Wrong!') {
+      let wrongColumn = document.querySelectorAll(`[data-id="b${key}"]`);
+      Array.from(wrongColumn).forEach(function(element) {
+        element.style.backgroundColor = "red";
+      });
+    }
+  });
+}
+
+
 function handleSubmit(event) {
   const sudoku = new Sudoku();
   event.preventDefault();
@@ -54,7 +108,9 @@ function handleSubmit(event) {
   sudoku.addRow(newRow);
 
   sudoku.makeColumns();
-  console.log(sudoku);
+  displaySudokuCheck(sudoku);
+  highlightRows(sudoku);
+  highlightColumns(sudoku);
 }
 
 window.addEventListener("load", function() {

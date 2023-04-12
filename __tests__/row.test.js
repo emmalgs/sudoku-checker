@@ -15,12 +15,12 @@ describe('Row', () => {
 
   test('should return true when .checkRows() is called on instance of row', () => {
     newRow.checkRows()
-    expect(newRow.correct).toEqual(true);
+    expect(newRow.correct).toEqual('Correct');
   });
 
   test('should return false if a row has a repeat number', () => {
     newRow.row = [1,2,3,3,4,5,6,7,8]
     newRow.checkRows()
-    expect(newRow.correct).toEqual(false);
+    expect(newRow.correct).toEqual('Wrong!');
   });
 })

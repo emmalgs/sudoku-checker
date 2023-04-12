@@ -15,12 +15,12 @@ describe('Column', () => {
 
   test('should return true when .checkColumns() is called on instance of column', () => {
     newColumn.checkColumns()
-    expect(newColumn.correct).toEqual(true);
+    expect(newColumn.correct).toEqual('Correct');
   });
 
   test('should return false if a column has a repeat number', () => {
     newColumn.column = [1,2,3,3,4,5,6,7,8]
     newColumn.checkColumns()
-    expect(newColumn.correct).toEqual(false);
+    expect(newColumn.correct).toEqual('Wrong!');
   });
 })
