@@ -21,9 +21,12 @@ describe('Sudoku', () => {
     expect(sudoku.id).toEqual(1);
   });
 
-  // test('should return an array when columns are called', () => {
-  //   expect(Array.isArray(sudoku.columns)).toEqual(true);
-  // });
+  test('should assign a row id to all 9 rows', () => {
+    for (let i = 0; i < 8; i++) {
+      sudoku.addRow(newRow);
+    }
+    expect(Object.keys(sudoku.rows)).toEqual(["1","2","3","4","5","6","7","8","9"]);
+  });
 
   // test('should create columns array when method .makeColumns() is called on instance of sudoku object', () => {
   //   sudoku.makeColumns();
